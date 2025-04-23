@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ImportResource;
 
 import es.mde.entidades.Accesorio;
 import es.mde.entidades.Juego;
@@ -27,13 +28,13 @@ public class TiendavideojuegosApplication {
 
             System.err.println("Está funcionando la aplicación");
 
-//            // Creando los juegos
+            // Creando los juegos
 //            JuegoDAO juegoDAO = context.getBean(JuegoDAO.class);
 //            juegoDAO.save(generaJuego());
 //            juegoDAO.save(generaJuego());
 //            juegoDAO.save(generaJuego());
 //            juegoDAO.save(generaJuego());
-//
+////
 //            List<Juego> juegos = juegoDAO.findAll();
 //            juegos.stream().map(Juego::toString).forEach(log::info);
 //
@@ -48,24 +49,30 @@ public class TiendavideojuegosApplication {
 //            accesorios.stream().map(Accesorio::toString).forEach(log::info);
 
             // Vamos a crear ordenadores con accesorios.
-            AccesorioDAO accesorioDAO = context.getBean(AccesorioDAO.class);
-            OrdenadorDAO ordenadorDAO = context.getBean(OrdenadorDAO.class);
-            Ordenador ordenador1 = ordenadorDAO.save(generarOrdenador());
-            Ordenador ordenador2 = ordenadorDAO.save(generarOrdenador());
-            Ordenador ordenador3 = ordenadorDAO.save(generarOrdenador());
+//            AccesorioDAO accesorioDAO = context.getBean(AccesorioDAO.class);
+//            OrdenadorDAO ordenadorDAO = context.getBean(OrdenadorDAO.class);
+//            Ordenador ordenador1 = ordenadorDAO.save(generarOrdenador());
+//            Ordenador ordenador2 = ordenadorDAO.save(generarOrdenador());
+//            Ordenador ordenador3 = ordenadorDAO.save(generarOrdenador());
+//            
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador1));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador1));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador1));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador2));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador2));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador2));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador3));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador3));
+//            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador3));
             
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador1));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador1));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador1));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador2));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador2));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador2));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador3));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador3));
-            accesorioDAO.save(generarAccesorioParaOrdenador(ordenador3));
+//          List<Ordenador> ordenadores = ordenadorDAO.readByPuntuacionRendimientoBetween(70, 80);
+//          ordenadores.stream().map(Ordenador::toString).forEach(log::info);
+//          
+//          ordenadores = ordenadorDAO.readByNombreEquipoContaining("or17");
+//          ordenadores.stream().map(Ordenador::toString).forEach(log::info);
             
-            context.close();
-            System.err.println("Está cerrándose la aplicación");
+//            context.close();
+//            System.err.println("Está cerrándose la aplicación");
 
 	}
 

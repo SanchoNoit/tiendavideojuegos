@@ -71,5 +71,13 @@ public class Ordenador {
         getAccesorios().add(accesorio);
         accesorio.setOrdenador(this);
     }
+
+	@Override
+	public String toString() {
+		return "Ordenador [id_ordenador=" + id_ordenador + ", nombreEquipo=" + nombreEquipo + ", puntuacionRendimiento="
+				+ puntuacionRendimiento + "]";
+	}
+    
+    
     
 }

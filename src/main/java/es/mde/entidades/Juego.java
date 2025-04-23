@@ -11,18 +11,19 @@ import jakarta.persistence.Table;
 @Table(name="Juegos")
 public class Juego {
 	
+	private String titulo;
+	public Juego() {
+		super();
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private Long id;
-	
-	private String titulo;
-	private float precio;
-	
-	public Juego() {
-	}
+	protected Long id;
+	protected float precio;
 
 	public Juego(String titulo, float precio) {
+		super();
 		this.titulo = titulo;
 		this.precio = precio;
 	}
@@ -42,7 +43,7 @@ public class Juego {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
+	
 	public float getPrecio() {
 		return precio;
 	}
