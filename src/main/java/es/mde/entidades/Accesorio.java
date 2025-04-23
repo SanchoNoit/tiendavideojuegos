@@ -2,9 +2,12 @@ package es.mde.entidades;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,11 +24,20 @@ public class Accesorio {
 	
 	private float precio;
 	private boolean llevaPilas;
+        
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name = "ORDENADOR")
+        private Ordenador ordenador;
 	
 	public Accesorio() {}
 
-	public Accesorio(String descripcion) {
+        public Accesorio(String descripcion) {
+            this.descripcion = descripcion;
+        }
+        
+	public Accesorio(String descripcion, Ordenador ordenador) {
 		this.descripcion = descripcion;
+                this.ordenador = ordenador;
 	}
 
 	public Long getId() {
@@ -59,7 +71,20 @@ public class Accesorio {
 	public void setLlevaPilas(boolean llevaPilas) {
 		this.llevaPilas = llevaPilas;
 	}
-	
-	
-	
+
+        public Ordenador getOrdenador() {
+            return ordenador;
+        }
+
+        public void setOrdenador(Ordenador ordenador) {
+            this.ordenador = ordenador;
+        }
+
+    @Override
+    public String toString() {
+        return "Accesorio con id=" + id + ", descripcion=" + descripcion + ", precio=" + precio;
+    }
+        
+        
+        
 }
